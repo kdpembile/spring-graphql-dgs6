@@ -1,0 +1,17 @@
+type Contact {
+    person: [Person]
+    company: String
+    phone: [Contact]
+    email: [Email]
+    ringtone: [Ringtone]
+    textTone: [TextTone]
+    url: [Url]
+    address: [Address]!
+    birthday: String!
+    date: [Date]
+    relatedName: [Person]
+    socialProfile: [Social]
+    instantMessage: [Message]
+    notes: String!
+    linkContacts: [Contact]
+}
