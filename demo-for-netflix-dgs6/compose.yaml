@@ -1,1 +1,7 @@
 services:
+  demo-for-netflix-dgs6:
+    build: ./
+    ports:
+      - "5000:8080"
+    networks:
+      - default

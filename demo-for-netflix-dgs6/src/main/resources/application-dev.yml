@@ -3,9 +3,10 @@ spring:
     name: demo-for-netflix-dgs6
   docker:
     compose:
-      enabled: false
+      enabled: true
       file: docker-compose.yml
 dgs:
   graphql:
     graphiql:
       enabled: true
+
