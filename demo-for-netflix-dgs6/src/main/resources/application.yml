@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: demo-for-netflix-dgs6
+dgs:
+  graphql:
+    graphiql:
+      enabled: true
