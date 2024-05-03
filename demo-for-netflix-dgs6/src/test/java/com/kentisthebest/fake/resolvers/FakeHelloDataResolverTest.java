@@ -1,4 +1,4 @@
-package com.kentisthebest.resolvers;
+package com.kentisthebest.fake.resolvers;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package com.kentisthebest.datasources;
+package com.kentisthebest.fake.repositories;
 
 import com.kentisthebest.codegen.types.Hello;
 import java.util.ArrayList;
@@ -8,11 +8,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class FakeHelloDataSource {
+public class FakeHello {
 
   private final Faker faker;
 
-  public FakeHelloDataSource(Faker faker) {
+  public FakeHello(Faker faker) {
     this.faker = faker;
   }
 
