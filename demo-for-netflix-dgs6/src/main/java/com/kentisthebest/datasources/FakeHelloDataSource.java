@@ -1,31 +1,34 @@
-package com.kentisthebest.datasource.fake;
+package com.kentisthebest.datasources;
 
 import com.kentisthebest.codegen.types.Hello;
-import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import net.datafaker.Faker;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class FakeHelloDataSource {
 
-  @Autowired
-  private Faker faker;
+  private final Faker faker;
 
-  public static final List<Hello> HELLOS = new ArrayList<>();
+  public FakeHelloDataSource(Faker faker) {
+    this.faker = faker;
+  }
 
-  @PostConstruct
-  private void postConstruct() {
+  @Bean
+  List<Hello> hellos() {
+    List<Hello> list = new ArrayList<>();
+
     for (int i = 0; i < 20; i++) {
       var hello = Hello.newBuilder()
           .randomNumber(faker.random().nextInt(5000))
           .text(faker.funnyName().name())
           .build();
 
-      HELLOS.add(hello);
+      list.add(hello);
     }
-  }
 
+    return list;
+  }
 }

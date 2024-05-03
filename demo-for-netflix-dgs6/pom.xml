@@ -19,6 +19,7 @@
 		<net.datafaker.version>2.2.2</net.datafaker.version>
 		<dgs.graphql.version>8.5.8</dgs.graphql.version>
 		<dgs.graphql.codegen.version>5.1.17</dgs.graphql.codegen.version>
+		<common.lang3.version>3.14.0</common.lang3.version>
 	</properties>
 
 	<dependencyManagement>
@@ -39,6 +40,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${common.lang3.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.netflix.graphql.dgs</groupId>
 			<artifactId>graphql-dgs-spring-graphql-starter</artifactId>
