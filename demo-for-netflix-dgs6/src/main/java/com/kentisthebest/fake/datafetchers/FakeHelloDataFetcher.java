@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @DgsComponent
-public class FakeHelloDataResolver {
+public class FakeHelloDataFetcher {
 
   private final List<Hello> hellos;
 
-  public FakeHelloDataResolver(List<Hello> hellos) {
+  public FakeHelloDataFetcher(List<Hello> hellos) {
     this.hellos = hellos;
   }
 

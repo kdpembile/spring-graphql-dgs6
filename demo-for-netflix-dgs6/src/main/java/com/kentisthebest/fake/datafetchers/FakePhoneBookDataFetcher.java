@@ -13,11 +13,11 @@ import java.util.Map;
 import java.util.Optional;
 
 @DgsComponent
-public class FakePhoneBookResolver {
+public class FakePhoneBookDataFetcher {
 
   private final List<Contact> contacts;
 
-  public FakePhoneBookResolver(List<Contact> contacts) {
+  public FakePhoneBookDataFetcher(List<Contact> contacts) {
     this.contacts = contacts;
   }
 
