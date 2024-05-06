@@ -8,11 +8,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class FakeHello {
+public class FakeHelloRepository {
 
   private final Faker faker;
 
-  public FakeHello(Faker faker) {
+  public FakeHelloRepository(Faker faker) {
     this.faker = faker;
   }
 

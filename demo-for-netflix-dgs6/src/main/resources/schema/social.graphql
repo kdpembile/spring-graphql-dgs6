@@ -1,4 +1,0 @@
-type Social {
-    appName: String
-    username: String
-}

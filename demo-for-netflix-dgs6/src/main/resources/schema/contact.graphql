@@ -1,17 +1,28 @@
 type Contact {
-    person: [Person]
+    person: Person
     company: String
-    phone: [Contact]
+    phone: [Phone]
     email: [Email]
     ringtone: [Ringtone]
     textTone: [TextTone]
-    url: [Url]
-    address: [Address]!
-    birthday: String!
-    date: [Date]
     relatedName: [Person]
-    socialProfile: [Social]
-    instantMessage: [Message]
     notes: String!
-    linkContacts: [Contact]
+}
+
+type Phone {
+    category: String
+    number: String
+}
+
+type Email {
+    emailService: String
+    emailAddress: String
+}
+
+type Ringtone {
+    name: String
+}
+
+type TextTone {
+    name: String
 }

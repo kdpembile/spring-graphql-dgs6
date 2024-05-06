@@ -1,3 +1,0 @@
-type TextTone {
-    name: String
-}

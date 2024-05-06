@@ -1,8 +1,0 @@
-type Address {
-    street: String
-    barangay: String
-    city: String
-    province: String
-    postalCode: Int
-    country: String
-}

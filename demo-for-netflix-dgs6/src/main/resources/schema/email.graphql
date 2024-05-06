@@ -1,4 +1,0 @@
-type Email {
-    name: String
-    emailAddress: String
-}

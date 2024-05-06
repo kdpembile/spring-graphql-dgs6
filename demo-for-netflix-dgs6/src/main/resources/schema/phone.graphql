@@ -1,4 +1,0 @@
-type Mobile {
-    name: String
-    number: String
-}
