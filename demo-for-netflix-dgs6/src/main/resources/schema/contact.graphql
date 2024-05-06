@@ -26,3 +26,8 @@ type Ringtone {
 type TextTone {
     name: String
 }
+
+input relatedNameInput {
+    firstName: String
+    lastName: String
+}

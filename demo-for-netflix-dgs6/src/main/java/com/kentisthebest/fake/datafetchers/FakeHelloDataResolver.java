@@ -1,4 +1,4 @@
-package com.kentisthebest.fake.resolvers;
+package com.kentisthebest.fake.datafetchers;
 
 import com.kentisthebest.codegen.types.Hello;
 import com.netflix.graphql.dgs.DgsComponent;

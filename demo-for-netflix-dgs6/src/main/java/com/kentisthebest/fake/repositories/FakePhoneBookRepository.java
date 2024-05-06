@@ -100,7 +100,7 @@ public class FakePhoneBookRepository {
                               .build()
                       ))
                   .build()))
-          .notes(faker.coffee().notes())
+          .notes(faker.rickAndMorty().quote())
           .build();
 
       list.add(contacts);

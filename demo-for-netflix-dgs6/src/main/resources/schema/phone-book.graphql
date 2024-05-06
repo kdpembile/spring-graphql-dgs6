@@ -2,4 +2,5 @@ type Query {
     allHellos: [Hello]
     oneHello: Hello
     phonebook(firstName:String): [Contact]
+    contactByRelatedName(relatedName: relatedNameInput!): [Contact]
 }

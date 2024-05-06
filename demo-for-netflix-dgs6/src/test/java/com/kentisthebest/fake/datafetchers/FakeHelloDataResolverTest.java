@@ -1,4 +1,4 @@
-package com.kentisthebest.fake.resolvers;
+package com.kentisthebest.fake.datafetchers;
 
 import static org.junit.jupiter.api.Assertions.*;
 
