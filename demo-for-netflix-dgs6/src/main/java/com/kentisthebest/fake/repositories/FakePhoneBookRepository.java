@@ -65,11 +65,11 @@ public class FakePhoneBookRepository {
           .email(
               Arrays.asList(
                   Email.newBuilder()
-                      .emailAddress("work")
+                      .emailService(faker.internet().webdomain())
                       .emailAddress(faker.internet().emailAddress())
                       .build(),
                   Email.newBuilder()
-                      .emailAddress("personal")
+                      .emailService(faker.internet().webdomain())
                       .emailAddress(faker.internet().emailAddress())
                       .build())
           )
