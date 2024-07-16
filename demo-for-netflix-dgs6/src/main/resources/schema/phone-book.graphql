@@ -6,3 +6,9 @@ type Query {
     phonebook(firstName:String): [Contact]
     contactByRelatedName(relatedName: relatedNameInput!): [Contact]
 }
+
+type Mutation {
+    addHello(helloInput: HelloInput!): Int
+    replaceHelloText(helloInput: HelloInput): [Hello]
+    deleteHello(number: Int!): Int
+}
