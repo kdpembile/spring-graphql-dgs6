@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import net.datafaker.Faker;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,11 +29,6 @@ public class FakePhoneBookRepository {
   @Bean
   List<String> phoneCategory() {
     return Arrays.asList("Work", "Home");
-  }
-
-  @Bean
-  Random rand() {
-    return new Random();
   }
 
   @Bean
@@ -72,11 +67,13 @@ public class FakePhoneBookRepository {
           .phone(
               Arrays.asList(
                   Phone.newBuilder()
-                      .category(phoneCategory().get(rand().nextInt(phoneCategory().size() - 1)))
+                      .category(phoneCategory().get(
+                          ThreadLocalRandom.current().nextInt(0, phoneCategory().size() - 1)))
                       .number(faker.phoneNumber().phoneNumber())
                       .build(),
                   Phone.newBuilder()
-                      .category(phoneCategory().get(rand().nextInt(phoneCategory().size() - 1)))
+                      .category(phoneCategory().get(
+                          ThreadLocalRandom.current().nextInt(0, phoneCategory().size() - 1)))
                       .number(faker.phoneNumber().phoneNumber())
                       .build())
           )
@@ -93,12 +90,14 @@ public class FakePhoneBookRepository {
           )
           .ringtone(Collections.singletonList(
               Ringtone.newBuilder()
-                  .name(ringtoneCategory().get(rand().nextInt(ringtoneCategory().size() - 2)))
+                  .name(ringtoneCategory().get(
+                      ThreadLocalRandom.current().nextInt(0, ringtoneCategory().size() - 1)))
                   .build()
           ))
           .textTone(Collections.singletonList(
               TextTone.newBuilder()
-                  .name(ringtoneCategory().get(rand().nextInt(ringtoneCategory().size() - 2)))
+                  .name(ringtoneCategory().get(
+                      ThreadLocalRandom.current().nextInt(0, ringtoneCategory().size() - 1)))
                   .build()
           ))
           .relatedName(Collections.singletonList(
