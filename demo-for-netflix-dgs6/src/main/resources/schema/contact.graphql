@@ -1,4 +1,5 @@
 type Contact {
+    """contact owner"""
     person: Person
     company: String
     phone: [Phone]
@@ -25,6 +26,11 @@ type Ringtone {
 
 type TextTone {
     name: String
+}
+
+enum Status {
+    ACTIVE
+    NOT_ACTIVE
 }
 
 input relatedNameInput {
