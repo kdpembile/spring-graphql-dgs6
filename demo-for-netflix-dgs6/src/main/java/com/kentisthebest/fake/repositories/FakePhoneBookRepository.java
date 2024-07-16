@@ -68,12 +68,12 @@ public class FakePhoneBookRepository {
               Arrays.asList(
                   Phone.newBuilder()
                       .category(phoneCategory().get(
-                          ThreadLocalRandom.current().nextInt(0, phoneCategory().size() - 1)))
+                          ThreadLocalRandom.current().nextInt(0, phoneCategory().size())))
                       .number(faker.phoneNumber().phoneNumber())
                       .build(),
                   Phone.newBuilder()
                       .category(phoneCategory().get(
-                          ThreadLocalRandom.current().nextInt(0, phoneCategory().size() - 1)))
+                          ThreadLocalRandom.current().nextInt(0, phoneCategory().size())))
                       .number(faker.phoneNumber().phoneNumber())
                       .build())
           )
@@ -91,13 +91,13 @@ public class FakePhoneBookRepository {
           .ringtone(Collections.singletonList(
               Ringtone.newBuilder()
                   .name(ringtoneCategory().get(
-                      ThreadLocalRandom.current().nextInt(0, ringtoneCategory().size() - 1)))
+                      ThreadLocalRandom.current().nextInt(0, ringtoneCategory().size())))
                   .build()
           ))
           .textTone(Collections.singletonList(
               TextTone.newBuilder()
                   .name(ringtoneCategory().get(
-                      ThreadLocalRandom.current().nextInt(0, ringtoneCategory().size() - 1)))
+                      ThreadLocalRandom.current().nextInt(0, ringtoneCategory().size())))
                   .build()
           ))
           .relatedName(Collections.singletonList(
