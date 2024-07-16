@@ -33,7 +33,7 @@ public class FakePhoneBookRepository {
           .person(Person.newBuilder()
               .firstName(faker.name().firstName())
               .lastName(faker.name().lastName())
-              .birthday(faker.date().birthday(0, 60, "MM/dd/yyyy"))
+              .birthday(faker.date().birthdayLocalDate())
               .address(
                   Arrays.asList(
                       Address.newBuilder()
@@ -83,7 +83,7 @@ public class FakePhoneBookRepository {
               Person.newBuilder()
                   .firstName(faker.name().firstName())
                   .lastName(faker.name().lastName())
-                  .birthday(faker.date().birthday(0, 60, "MM/dd/yyyy"))
+                  .birthday(faker.date().birthdayLocalDate())
                   .address(
                       Arrays.asList(
                           Address.newBuilder()
