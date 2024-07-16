@@ -6,8 +6,8 @@ type Person {
 }
 
 type Address {
-    street: String
-    city: String
-    zipCode: String
-    country: String
+    street: String!
+    city: String!
+    zipCode: String!
+    country: String!
 }
