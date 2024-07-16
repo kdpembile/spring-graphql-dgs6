@@ -6,11 +6,13 @@ import com.kentisthebest.codegen.types.Email;
 import com.kentisthebest.codegen.types.Person;
 import com.kentisthebest.codegen.types.Phone;
 import com.kentisthebest.codegen.types.Ringtone;
+import com.kentisthebest.codegen.types.Status;
 import com.kentisthebest.codegen.types.TextTone;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import net.datafaker.Faker;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +27,23 @@ public class FakePhoneBookRepository {
   }
 
   @Bean
+  List<String> phoneCategory() {
+    return Arrays.asList("Work", "Home");
+  }
+
+  @Bean
+  Random rand() {
+    return new Random();
+  }
+
+  @Bean
+  List<String> ringtoneCategory() {
+    return Arrays.asList("Note", "Aurora", "Bamboo");
+  }
+
+  @Bean
   List<Contact> contacts() {
+
     List<Contact> list = new ArrayList<>();
 
     for (int i = 0; i < 20; i++) {
@@ -54,11 +72,11 @@ public class FakePhoneBookRepository {
           .phone(
               Arrays.asList(
                   Phone.newBuilder()
-                      .category("home")
+                      .category(phoneCategory().get(rand().nextInt(phoneCategory().size() - 1)))
                       .number(faker.phoneNumber().phoneNumber())
                       .build(),
                   Phone.newBuilder()
-                      .category("work")
+                      .category(phoneCategory().get(rand().nextInt(phoneCategory().size() - 1)))
                       .number(faker.phoneNumber().phoneNumber())
                       .build())
           )
@@ -74,10 +92,14 @@ public class FakePhoneBookRepository {
                       .build())
           )
           .ringtone(Collections.singletonList(
-              Ringtone.newBuilder().name("default").build()
+              Ringtone.newBuilder()
+                  .name(ringtoneCategory().get(rand().nextInt(ringtoneCategory().size() - 2)))
+                  .build()
           ))
           .textTone(Collections.singletonList(
-              TextTone.newBuilder().name("default").build()
+              TextTone.newBuilder()
+                  .name(ringtoneCategory().get(rand().nextInt(ringtoneCategory().size() - 2)))
+                  .build()
           ))
           .relatedName(Collections.singletonList(
               Person.newBuilder()
@@ -101,6 +123,7 @@ public class FakePhoneBookRepository {
                       ))
                   .build()))
           .notes(faker.rickAndMorty().quote())
+          .status(Status.ACTIVE)
           .build();
 
       list.add(contacts);
